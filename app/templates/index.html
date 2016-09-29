@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block title %}<title>SCHOLAR FIND</title>{% endblock %}
+
+	<div class="banner">
+
+
+		<div class="container">
+			<div class="span_1_of_1">
+			    <h2><br><br></h2>
+			    <div class="search">
+			      <ul class="nav1">
+		            <li id="search">
+						<form action="single.html" method="get">
+							<input type="text" name="search_text" id="search_text" placeholder="Search"/>
+							<a href="single.html"><input type="button" name="search_button" id="search_button">
+						</form>
+					</li>
+
+	              </ul>
+	            </div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

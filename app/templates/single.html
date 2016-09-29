@@ -1,0 +1,2565 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block title %}<title>Single</title>{% endblock %}
+
+
+	<div class="single">
+		<div class="container">
+		   <div class="single_box1">
+
+			 <div class="col-sm-5 single_left">
+
+					<img  hspace="100" vspace="40" src="../static/images/single.jpg" class="img-responsive" alt=""/>
+			 </div>
+			 <div class="col-sm-7 col_6">
+				<ul class="size">
+					<h3>Jun S Liu</h3>
+					<li><a href="#">Professor of statistics, Harvard University</a></li></br>
+					<li><a href="#">Statistics, </a></li>
+					<li><a href="#">Monte Carlo,</a></li>
+					<li><a href="#">Bayesian, </a></li>
+					<li><a href="#">Bioinformatics, </a></li>
+					<li><a href="#">Signal Processing, </a></li>
+					<li><a href="#">Biostatistics,</a></li>
+					<li><a href="#">Genetics,</a></li>
+					<li><a href="#">Data Mining.</a></li>
+
+
+
+				</ul>
+					<p class="movie_option"><strong>Photo : </strong>5487695478</p>
+				    <p class="movie_option"><strong>Email : </strong>jliu@stat.harvard.edu</p>
+				    <a class="btn_3" href="#">Connect</a>
+
+			</div>
+			<div class="clearfix"> </div>
+		  </div>
+
+		 <!--显示关键字信息 -->
+
+			<!--显示echart图片 -->
+		<div id="cloud" style="height:350px;">
+    		<!-- ECharts单文件引入 -->
+   				<script src="../static/js/dist/echarts.js"></script>
+   				 <script type="text/javascript">
+        		// 路径配置
+        		require.config({
+            		paths: {
+            			 'echarts': '../static/js/dist'
+            		}
+        		});
+        		// 使用
+				require(
+				  [
+				    'echarts',
+				    "echarts/chart/wordCloud"// 使用字符云加载，按需加载
+				  ],
+				  function (ec) {
+				    // 基于准备好的dom，初始化echarts图表
+				    var cloudChart = ec.init(document.getElementById('cloud'));
+				    //设置数据
+				    function createRandomItemStyle() {
+						    return {
+						        normal: {
+						            color: 'rgb(' + [
+						                Math.round(Math.random() * 160),
+						                Math.round(Math.random() * 160),
+						                Math.round(Math.random() * 160)
+						            ].join(',') + ')'
+						        }
+						    };
+						}
+				    var option = {
+				    	title: {
+					        text: 'Research Interests:'
+					    },
+					    tooltip: {
+					        show: true
+					    },
+					    series: [{
+					        name: 'Research Interests:',
+					        type: 'wordCloud',
+					        size: ['100%', '100%'],
+					        // textRotation : [0, 45, 90, -45],
+					        textRotation : [0,0],
+					        textPadding: 0,
+
+					        data: [
+					            {
+					                name: "Statistical missing data problems",
+					                value: 10000,
+					                itemStyle: createRandomItemStyle()
+
+					            },
+					            {
+					                name: "imputation methodology",
+					                value: 6181,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Gibbs sampling",
+					                value: 4386,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: " MCMC methods",
+					                value: 4055,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Markov structure",
+					                value: 2467,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "genetics",
+					                value: 2244,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Bayesian methodology",
+					                value: 1898,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "VLSI design",
+					                value: 1484,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Dynamic systems",
+					                value: 1112,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Monte Carlo filters",
+					                value: 965,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Sequential importance sampling and resampling",
+					                value: 847,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: " graphical models",
+					                value: 582,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "model selections",
+					                value: 555,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "model testings",
+					                value: 550,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Large-scale computation",
+					                value: 462,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Computer vision",
+					                value: 366,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Image reconstructions",
+					                value: 360,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "rate of convergence",
+					                value: 2282,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: " SIS filter",
+					                value: 273,
+					                itemStyle: createRandomItemStyle()
+					            },
+					            {
+					                name: "Computational Biology",
+					                value: 665,
+					                itemStyle: createRandomItemStyle()
+					            }
+					        ]
+					    }]
+				    };
+
+				    // 为echarts对象加载数据
+				    cloudChart.setOption(option);
+				  }
+				);
+
+		    </script>
+		 </div>
+
+
+
+		<div class="clearfix"></div>
+			<!--显示合著者关系-->
+		<div class ="panel-heading eye-protector-processed" style="background-color: #00C78A;border-top-left-radius: 10px;
+  border-top-right-radius: 10px;">
+				<h4 class="tag_head">CoAuthor</h4>
+			</div>
+		<!-- 为显示作者合作关系 echart-->
+		<div id="relation" style="height:780px;border:2px solid #ccc;padding:1px;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; ">
+    		<!-- ECharts单文件引入 -->
+
+   				 <script type="text/javascript">
+        		// 路径配置
+        		require.config({
+            		paths: {
+            			 'echarts': '../static/js/dist'
+            		}
+        		});
+        		// 使用
+				require(
+				  [
+				    'echarts',
+				    'echarts/chart/force',// 使用力导向图加载，按需加载
+				    'echarts/chart/chord'//加载和弦图
+
+				  ],
+				 function (ec) {
+				    // 基于准备好的dom，初始化echarts图表
+				    var relatChart = ec.init(document.getElementById('relation'));
+				 	var option = {
+				 			//标题控件
+						    title : {
+						    	// 	主标题文本
+						        // text: '人物关系：Jun S Liu',
+						        //水平安放位置，默认为左侧	，可选为：'center' | 'left' | 'right' | {number}（x坐标，单位px）
+						        // x:'right',
+						        //垂直安放位置，默认为全图顶端，可选为：'top' | 'bottom' | 'center' | {number}（y坐标，单位px）
+						        // y:'bottom',
+						        //标题文本样式
+						     //    textStyle : {
+							    // 	fontSize: 18,
+								   //  fontWeight: 'bolder',
+								   //  color: '#333',
+								   //  //字体样式
+								   //  fontStyle:'oblique'
+						    	// },
+						    	subtext: '图例代表核心人物与其他学者的合著论文数量'
+						    },
+						    //提示框,鼠标悬浮交互时的信息提示
+						    tooltip : {
+						    	show:true,
+						    	// 触发类型，默认数据触发，可选为：'item' | 'axis'
+						        trigger: 'item',
+						        //内容格式器
+						        formatter: '{a} : {b}',
+						        //鼠标是否可进入详情气泡中，默认为false，如需详情内交互，如添加链接，按钮，可设置为true
+						        //enterable:true
+						    },
+						    //工具箱
+						    toolbox: {
+						    	//显示策略，默认不显示
+						        show : true,
+						        feature : {
+						        	//辅助线
+						        	//mark : {show: true},
+						        	//数据视图
+						        	//dataView : {show: true, readOnly: false},
+						            restore : {show: true},
+						            //动态类型切换，从力导向图向和弦图切换
+						            magicType: {show: true, type: ['force', 'chord']},
+						            saveAsImage : {show: true}
+						        }
+						    },
+						    legend: {
+						        x: 'left',
+						        data:['>15','5~15','3~4','2','1'],
+						        // setSelected:{
+						        // 	data[]:false,
+						        // 	'其他':false
+
+						        // }
+						        textStyle:{
+						        	 fontSize:16
+
+						        }
+
+						    },
+						    series : [
+						        {
+						            type:'force',
+
+						            name : "合作次数",
+
+						            ribbonType: false,
+						            categories : [
+						                {
+						                    name: '人物'
+						                },
+						                {
+						                    name: '>15'
+						                },
+						                {
+						                    name:'5~15'
+						                },
+						                {
+						                    name:'3~4'
+						                },
+						                {
+						                    name:'2'
+						                },
+						                {
+						                    name:'1'
+						                }
+
+						            ],
+						            itemStyle: {
+						            	//设置常用标识
+						                normal: {
+						                    label: {
+						                        show: true,
+						                        textStyle: {
+						                            color: '#333'
+						                        }
+						                    },
+						                    nodeStyle : {
+						                        brushType : 'both',
+						                        borderColor : 'rgba(255,215,0,0.4)',
+						                        borderWidth : 1
+						                    },
+						                    linkStyle: {
+						                        type: 'curve'
+						                    }
+						                },
+						                //设置炫富
+						                emphasis: {
+						                    label: {
+						                        show: false,
+						                        // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+						                    },
+						                    nodeStyle : {
+						                        //r: 30
+						                    },
+						                    linkStyle : {}
+						                }
+						            },
+
+						            useWorker: false,
+						            minRadius : 15,
+						            maxRadius : 25,
+						            gravity: 1.1,
+						            scaling: 1.3,
+						            roam: 'move',
+						            nodes:[
+										{category:0, name:'Jun S Liu 121',value : 20,label:'Jun S Liu'},
+										{category:1, name:'Charles E Lawrence 16',value : 20,label:'Charles E Lawrence'},
+										{category:2, name:'Wing Hung Wong 11',value : 15,label:'Wing Hung Wong'},
+										{category:2, name:'Rong Chen 10',value : 14,label:'Rong Chen'},
+										{category:2, name:'Andrew F Neuwald 8',value : 12,label:'Andrew F Neuwald'},
+										{category:2, name:'X Shirley Liu 8',value : 12,label:'X Shirley Liu'},
+										{category:2, name:'Shane T Jensen 6',value : 10,label:'Shane T Jensen'},
+										{category:2, name:'Faming Liang 5',value : 9,label:'Faming Liang'},
+										{category:2, name:'Zhaohui S Qin 5',value : 9,label:'Zhaohui S Qin'},
+										{category:2, name:'Wenxuan Zhong 5',value : 9,label:'Wenxuan Zhong'},
+										{category:2, name:'Xin Lu 5',value : 9,label:'Xin Lu'},
+										{category:3, name:'Erin M Conlon 4',value : 8,label:'Erin M Conlon'},
+										{category:3, name:'Mayetri Gupta 4',value : 8,label:'Mayetri Gupta'},
+										{category:3, name:'Douglas L Brutlag 4',value : 8,label:'Douglas L Brutlag'},
+										{category:3, name:'Qing Zhou 4',value : 8,label:'Qing Zhou'},
+										{category:3, name:'Ping Ma 4',value : 8,label:'Ping Ma'},
+										{category:3, name:'Jun Zhu 4',value : 8,label:'Jun Zhu'},
+										{category:3, name:'Jinfeng Zhang 4',value : 8,label:'Jinfeng Zhang'},
+										{category:3, name:'Michael J Palumbo 3',value : 7,label:'Michael J Palumbo'},
+										{category:3, name:'William Thompson 3',value : 7,label:'William Thompson'},
+										{category:3, name:'Yu Zhang 3',value : 7,label:'Yu Zhang'},
+										{category:3, name:'Tianhua Niu 3',value : 7,label:'Tianhua Niu'},
+										{category:3, name:'Xiaodong Wang 3',value : 7,label:'Xiaodong Wang'},
+										{category:3, name:'Richard Losick 3',value : 7,label:'Richard Losick'},
+										{category:3, name:'Guocheng Yuan 3',value : 7,label:'Guocheng Yuan'},
+										{category:3, name:'Yuguo Chen 3',value : 7,label:'Yuguo Chen'},
+										{category:3, name:'Junni L Zhang 3',value : 7,label:'Junni L Zhang'},
+										{category:3, name:'Yuan Yuan 3',value : 7,label:'Yuan Yuan'},
+										{category:3, name:'Patrick Eichenberger 3',value : 7,label:'Patrick Eichenberger'},
+										{category:4, name:'Roee Gutman 2',value : 2,label:'Roee Gutman'},
+										{category:4, name:'Lu Tian 2',value : 2,label:'Lu Tian'},
+										{category:4, name:'Tingting Zhang 2',value : 2,label:'Tingting Zhang'},
+										{category:4, name:'Augustine Kong 2',value : 2,label:'Augustine Kong'},
+										{category:4, name:'Masaya Fujita 2',value : 2,label:'Masaya Fujita'},
+										{category:4, name:'Chiara Sabatti 2',value : 2,label:'Chiara Sabatti'},
+										{category:4, name:'Scott C Schmidler 2',value : 2,label:'Scott C Schmidler'},
+										{category:4, name:'Wei Zhang 2',value : 2,label:'Wei Zhang'},
+										{category:4, name:'Yu Zhu 2',value : 2,label:'Yu Zhu'},
+										{category:4, name:'Lei Shen 2',value : 2,label:'Lei Shen'},
+										{category:4, name:'Jason Cong 2',value : 2,label:'Jason Cong'},
+										{category:4, name:'Bo Jiang 2',value : 2,label:'Bo Jiang'},
+										{category:4, name:'Patrycja Vasilyev Missiuro 2',value : 2,label:'Patrycja Vasilyev Missiuro'},
+										{category:4, name:'Brian C Ross 2',value : 2,label:'Brian C Ross'},
+										{category:4, name:'Tanya Logvinenko 2',value : 2,label:'Tanya Logvinenko'},
+										{category:4, name:'Cristian I Castillo-Davis 2',value : 2,label:'Cristian I Castillo-Davis'},
+										{category:4, name:'Hui Ge 2',value : 2,label:'Hui Ge'},
+										{category:4, name:'Tianming Kong 2',value : 2,label:'Tianming Kong'},
+										{category:4, name:'Lee Ann Mccue 2',value : 2,label:'Lee Ann Mccue'},
+										{category:4, name:'Linda Mayerhofere 2',value : 2,label:'Linda Mayerhofere'},
+										{category:4, name:'Lihua Zou 2',value : 2,label:'Lihua Zou'},
+										{category:4, name:'S C Kou 2',value : 2,label:'S C Kou'},
+										{category:4, name:'Rajesh Chowdhary 2',value : 2,label:'Rajesh Chowdhary'},
+										{category:4, name:'Ming Lin 2',value : 2,label:'Ming Lin'},
+										{category:4, name:'L J Wei 2',value : 2,label:'L J Wei'},
+										{category:4, name:'Gopi Goswami 2',value : 2,label:'Gopi Goswami'},
+										{category:4, name:'Dongmin Xu 2',value : 2,label:'Dongmin Xu'},
+										{category:4, name:'David Z Rudner 2',value : 2,label:'David Z Rudner'},
+										{category:4, name:'Liming Cai 2',value : 2,label:'Liming Cai'},
+										{category:4, name:'Xiaodan Fan 2',value : 2,label:'Xiaodan Fan'},
+										{category:5, name:'Michael P Ryan 1',value : 1,label:'Michael P Ryan'},
+										{category:5, name:'X Sunney Xie 1',value : 1,label:'X Sunney Xie'},
+										{category:5, name:'Steven N Maceachern 1',value : 1,label:'Steven N Maceachern'},
+										{category:5, name:'W Evan Johnson 1',value : 1,label:'W Evan Johnson'},
+										{category:5, name:'Alexander Miron 1',value : 1,label:'Alexander Miron'},
+										{category:5, name:'Yves F Atchade 1',value : 1,label:'Yves F Atchade'},
+										{category:5, name:'Peter Bouman 1',value : 1,label:'Peter Bouman'},
+										{category:5, name:'Daniel L Hart 1',value : 1,label:'Daniel L Hart'},
+										{category:5, name:'Yibo Wu 1',value : 1,label:'Yibo Wu'},
+										{category:5, name:'C M Cavanaugh 1',value : 1,label:'C M Cavanaugh'},
+										{category:5, name:'Scott V Edwards 1',value : 1,label:'Scott V Edwards'},
+										{category:5, name:'Jianxing Feng 1',value : 1,label:'Jianxing Feng'},
+										{category:5, name:'Persi Diaconis 1',value : 1,label:'Persi Diaconis'},
+										{category:5, name:'Xiu-Qin Xu 1',value : 1,label:'Xiu-Qin Xu'},
+										{category:5, name:'Dunja Skoko 1',value : 1,label:'Dunja Skoko'},
+										{category:5, name:'Vamsi K Mootha 1',value : 1,label:'Vamsi K Mootha'},
+										{category:5, name:'Saumyadipta Pyne 1',value : 1,label:'Saumyadipta Pyne'},
+										{category:5, name:'Lyndsay N Harris 1',value : 1,label:'Lyndsay N Harris'},
+										{category:5, name:'John Q Su 1',value : 1,label:'John Q Su'},
+										{category:5, name:'James D Iglehart 1',value : 1,label:'James D Iglehart'},
+										{category:5, name:'Mark S Boguski 1',value : 1,label:'Mark S Boguski'},
+										{category:5, name:'Jason D Lieb 1',value : 1,label:'Jason D Lieb'},
+										{category:5, name:'Wyeth W Wasserman 1',value : 1,label:'Wyeth W Wasserman'},
+										{category:5, name:'X Liu 1',value : 1,label:'X Liu'},
+										{category:5, name:'Aleksandar Poleksic 1',value : 1,label:'Aleksandar Poleksic'},
+										{category:5, name:'Jie Yan 1',value : 1,label:'Jie Yan'},
+										{category:5, name:'Kurt E Kwast 1',value : 1,label:'Kurt E Kwast'},
+										{category:5, name:'Sigal Ben-Yehuda 1',value : 1,label:'Sigal Ben-Yehuda'},
+										{category:5, name:'Michael Radermacher 1',value : 1,label:'Michael Radermacher'},
+										{category:5, name:'Hon-Chiu E Leung 1',value : 1,label:'Hon-Chiu E Leung'},
+										{category:5, name:'Eric E Schadt 1',value : 1,label:'Eric E Schadt'},
+										{category:5, name:'Ke Deng 1',value : 1,label:'Ke Deng'},
+										{category:5, name:'Tony Kouzarides 1',value : 1,label:'Tony Kouzarides'},
+										{category:5, name:'K M Scott 1',value : 1,label:'K M Scott'},
+										{category:5, name:'Stephen F Altschul 1',value : 1,label:'Stephen F Altschul'},
+										{category:5, name:'Dennis Vitkupb 1',value : 1,label:'Dennis Vitkupb'},
+										{category:5, name:'Junyi Xie 1',value : 1,label:'Junyi Xie'},
+										{category:5, name:'Ping He 1',value : 1,label:'Ping He'},
+										{category:5, name:'Clifford A Meyer 1',value : 1,label:'Clifford A Meyer'},
+										{category:5, name:'Jyoti Shetty 1',value : 1,label:'Jyoti Shetty'},
+										{category:5, name:'Yang Li 1',value : 1,label:'Yang Li'},
+										{category:5, name:'Joon J Song 1',value : 1,label:'Joon J Song'},
+										{category:5, name:'Lingyu Chen 1',value : 1,label:'Lingyu Chen'},
+										{category:5, name:'Qian Wang 1',value : 1,label:'Qian Wang'},
+										{category:5, name:'Tingjun Hou 1',value : 1,label:'Tingjun Hou'},
+										{category:5, name:'Neil Risch 1',value : 1,label:'Neil Risch'},
+										{category:5, name:'Atsushi Ogura 1',value : 1,label:'Atsushi Ogura'},
+										{category:5, name:'Difeng Dong 1',value : 1,label:'Difeng Dong'},
+										{category:5, name:'Yong Zhang 1',value : 1,label:'Yong Zhang'},
+										{category:5, name:'Jiajun Gu 1',value : 1,label:'Jiajun Gu'},
+										{category:5, name:'Dongsheng Che 1',value : 1,label:'Dongsheng Che'},
+										{category:5, name:'John F Marko 1',value : 1,label:'John F Marko'},
+										{category:5, name:'Qian Shi 1',value : 1,label:'Qian Shi'},
+										{category:5, name:'Sira Sriswasdi 1',value : 1,label:'Sira Sriswasdi'},
+										{category:5, name:'Jie Liang 1',value : 1,label:'Jie Liang'},
+										{category:5, name:'Bradley E Bernstein 1',value : 1,label:'Bradley E Bernstein'},
+										{category:5, name:'Christopher W Botka 1',value : 1,label:'Christopher W Botka'},
+										{category:5, name:'Boris Gorbatyuk 1',value : 1,label:'Boris Gorbatyuk'},
+										{category:5, name:'Kesheng Liu 1',value : 1,label:'Kesheng Liu'},
+										{category:5, name:'Susan P Holmes 1',value : 1,label:'Susan P Holmes'},
+										{category:5, name:'Andrew M Shedlock 1',value : 1,label:'Andrew M Shedlock'},
+										{category:5, name:'Seth Blackshaw 1',value : 1,label:'Seth Blackshaw'},
+										{category:5, name:'Vladimir B Bajic 1',value : 1,label:'Vladimir B Bajic'},
+										{category:5, name:'Montserrat Samsoo 1',value : 1,label:'Montserrat Samsoo'},
+										{category:5, name:'Naoya Hata 1',value : 1,label:'Naoya Hata'},
+										{category:5, name:'Zhihai Liu 1',value : 1,label:'Zhihai Liu'},
+										{category:5, name:'Stuart L Schreiber 1',value : 1,label:'Stuart L Schreiber'},
+										{category:5, name:'Hongwei Xie 1',value : 1,label:'Hongwei Xie'},
+										{category:5, name:'Pengyu Hong 1',value : 1,label:'Pengyu Hong'},
+										{category:5, name:'Shaying Zhao 1',value : 1,label:'Shaying Zhao'},
+										{category:5, name:'David J Lipman 1',value : 1,label:'David J Lipman'},
+										{category:5, name:'Victoria Derbyshire 1',value : 1,label:'Victoria Derbyshire'},
+										{category:5, name:'Limsoon Wong 1',value : 1,label:'Limsoon Wong'},
+										{category:5, name:'Jing Zhang 1',value : 1,label:'Jing Zhang'},
+										{category:5, name:'Caitlin Ferguson 1',value : 1,label:'Caitlin Ferguson'},
+										{category:5, name:'Peng Zeng 1',value : 1,label:'Peng Zeng'},
+										{category:5, name:'Tsutomu Sato 1',value : 1,label:'Tsutomu Sato'},
+										{category:5, name:'Zhi Genga 1',value : 1,label:'Zhi Genga'},
+										{category:5, name:'Bobbie-Jo M Webb 1',value : 1,label:'Bobbie-Jo M Webb'},
+										{category:5, name:'Jun Teng 1',value : 1,label:'Jun Teng'},
+										{category:5, name:'Jennifer Michaud 1',value : 1,label:'Jennifer Michaud'},
+										{category:5, name:'Natarajan Kannan 1',value : 1,label:'Natarajan Kannan'},
+										{category:5, name:'Hanchang Sun 1',value : 1,label:'Hanchang Sun'},
+										{category:5, name:'Mary Zhao 1',value : 1,label:'Mary Zhao'},
+										{category:5, name:'Sarah E Calvo 1',value : 1,label:'Sarah E Calvo'},
+										{category:5, name:'Haiyan Huang 1',value : 1,label:'Haiyan Huang'},
+										{category:5, name:'David Caplan 1',value : 1,label:'David Caplan'},
+										{category:5, name:'Rachel L Erlich 1',value : 1,label:'Rachel L Erlich'},
+										{category:5, name:'Christian R Landry 1',value : 1,label:'Christian R Landry'},
+										{category:5, name:'Emily L Humphrey 1',value : 1,label:'Emily L Humphrey'},
+										{category:5, name:'Wei Wang 1',value : 1,label:'Wei Wang'},
+										{category:5, name:'Xiping Xu 1',value : 1,label:'Xiping Xu'},
+										{category:5, name:'Stephanie T Wang 1',value : 1,label:'Stephanie T Wang'},
+										{category:5, name:'Robert Schneider 1',value : 1,label:'Robert Schneider'},
+										{category:5, name:'Lei Guo 1',value : 1,label:'Lei Guo'},
+										{category:5, name:'Wen Zhang 1',value : 1,label:'Wen Zhang'},
+										{category:5, name:'Delin Liu 1',value : 1,label:'Delin Liu'},
+										{category:5, name:'Guido E Del Pino 1',value : 1,label:'Guido E Del Pino'},
+										{category:5, name:'Xuegong Zhang 1',value : 1,label:'Xuegong Zhang'},
+										{category:5, name:'Bronya Jb Keats 1',value : 1,label:'Bronya Jb Keats'},
+										{category:5, name:'Koki Haga 1',value : 1,label:'Koki Haga'},
+										{category:5, name:'Hui Liu 1',value : 1,label:'Hui Liu'},
+										{category:5, name:'Ying Nian Wu 1',value : 1,label:'Ying Nian Wu'},
+										{category:5, name:'Guoyan Zhao 1',value : 1,label:'Guoyan Zhao'},
+										{category:5, name:'Gayle Dedeb 1',value : 1,label:'Gayle Dedeb'},
+										{category:5, name:'Patrick J Deschavanne 1',value : 1,label:'Patrick J Deschavanne'},
+										{category:5, name:'Arnaud Chastaneta 1',value : 1,label:'Arnaud Chastaneta'},
+										{category:5, name:'Fernando A Quintana 1',value : 1,label:'Fernando A Quintana'},
+										{category:5, name:'John C Wootton 1',value : 1,label:'John C Wootton'},
+										{category:5, name:'Thomas M Normana 1',value : 1,label:'Thomas M Normana'},
+										{category:5, name:'Connie Cepko 1',value : 1,label:'Connie Cepko'},
+										{category:5, name:'C Steven Carmack 1',value : 1,label:'C Steven Carmack'},
+										{category:5, name:'Merlise Clyde 1',value : 1,label:'Merlise Clyde'},
+						            ],
+						            links : [
+										{source : 'Jun S Liu 121', target : 'Jun S Liu 121', weight : 13},
+										{source : 'Charles E Lawrence 16', target : 'Jun S Liu 121', weight : 13},
+										{source : 'Wing Hung Wong 11', target : 'Jun S Liu 121', weight : 11},
+										{source : 'Rong Chen 10', target : 'Jun S Liu 121', weight : 10},
+										{source : 'Andrew F Neuwald 8', target : 'Jun S Liu 121', weight : 8},
+										{source : 'X Shirley Liu 8', target : 'Jun S Liu 121', weight : 8},
+										{source : 'Shane T Jensen 6', target : 'Jun S Liu 121', weight : 6},
+										{source : 'Faming Liang 5', target : 'Jun S Liu 121', weight : 5},
+										{source : 'Zhaohui S Qin 5', target : 'Jun S Liu 121', weight : 5},
+										{source : 'Wenxuan Zhong 5', target : 'Jun S Liu 121', weight : 5},
+										{source : 'Xin Lu 5', target : 'Jun S Liu 121', weight : 5},
+										{source : 'Erin M Conlon 4', target : 'Jun S Liu 121', weight : 4},
+										{source : 'Mayetri Gupta 4', target : 'Jun S Liu 121', weight : 4},
+										{source : 'Douglas L Brutlag 4', target : 'Jun S Liu 121', weight : 4},
+										{source : 'Qing Zhou 4', target : 'Jun S Liu 121', weight : 4},
+										{source : 'Ping Ma 4', target : 'Jun S Liu 121', weight : 4},
+										{source : 'Jun Zhu 4', target : 'Jun S Liu 121', weight : 4},
+										{source : 'Jinfeng Zhang 4', target : 'Jun S Liu 121', weight : 4},
+										{source : 'Michael J Palumbo 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'William Thompson 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Yu Zhang 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Tianhua Niu 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Xiaodong Wang 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Richard Losick 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Guocheng Yuan 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Yuguo Chen 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Junni L Zhang 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Yuan Yuan 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Patrick Eichenberger 3', target : 'Jun S Liu 121', weight : 3},
+										{source : 'Roee Gutman 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Lu Tian 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Tingting Zhang 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Augustine Kong 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Masaya Fujita 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Chiara Sabatti 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Scott C Schmidler 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Wei Zhang 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Yu Zhu 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Lei Shen 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Jason Cong 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Bo Jiang 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Patrycja Vasilyev Missiuro 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Brian C Ross 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Tanya Logvinenko 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Cristian I Castillo-Davis 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Hui Ge 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Tianming Kong 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Lee Ann Mccue 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Linda Mayerhofere 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Lihua Zou 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'S C Kou 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Rajesh Chowdhary 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Ming Lin 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'L J Wei 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Gopi Goswami 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Dongmin Xu 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'David Z Rudner 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Liming Cai 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Xiaodan Fan 2', target : 'Jun S Liu 121', weight : 2},
+										{source : 'Michael P Ryan 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'X Sunney Xie 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Steven N Maceachern 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'W Evan Johnson 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Alexander Miron 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Yves F Atchade 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Peter Bouman 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Daniel L Hart 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Yibo Wu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'C M Cavanaugh 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Scott V Edwards 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jianxing Feng 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Persi Diaconis 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Xiu-Qin Xu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Dunja Skoko 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Vamsi K Mootha 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Saumyadipta Pyne 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Lyndsay N Harris 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'John Q Su 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'James D Iglehart 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Mark S Boguski 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jason D Lieb 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Wyeth W Wasserman 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'X Liu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Aleksandar Poleksic 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jie Yan 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Kurt E Kwast 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Sigal Ben-Yehuda 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Michael Radermacher 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Hon-Chiu E Leung 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Eric E Schadt 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Ke Deng 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Tony Kouzarides 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'K M Scott 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Stephen F Altschul 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Dennis Vitkupb 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Junyi Xie 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Ping He 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Clifford A Meyer 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jyoti Shetty 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Yang Li 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Joon J Song 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Lingyu Chen 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Qian Wang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Tingjun Hou 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Neil Risch 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Atsushi Ogura 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Difeng Dong 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Yong Zhang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jiajun Gu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Dongsheng Che 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'John F Marko 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Qian Shi 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Sira Sriswasdi 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jie Liang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Bradley E Bernstein 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Christopher W Botka 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Boris Gorbatyuk 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Kesheng Liu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Susan P Holmes 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Andrew M Shedlock 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Seth Blackshaw 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Vladimir B Bajic 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Montserrat Samsoo 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Naoya Hata 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Zhihai Liu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Stuart L Schreiber 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Hongwei Xie 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Pengyu Hong 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Shaying Zhao 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'David J Lipman 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Victoria Derbyshire 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Limsoon Wong 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jing Zhang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Caitlin Ferguson 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Peng Zeng 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Tsutomu Sato 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Zhi Genga 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Bobbie-Jo M Webb 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jun Teng 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Jennifer Michaud 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Natarajan Kannan 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Hanchang Sun 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Mary Zhao 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Sarah E Calvo 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Haiyan Huang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'David Caplan 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Rachel L Erlich 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Christian R Landry 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Emily L Humphrey 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Wei Wang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Xiping Xu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Stephanie T Wang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Robert Schneider 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Lei Guo 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Wen Zhang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Delin Liu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Guido E Del Pino 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Xuegong Zhang 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Bronya Jb Keats 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Koki Haga 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Hui Liu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Ying Nian Wu 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Guoyan Zhao 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Gayle Dedeb 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Patrick J Deschavanne 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Arnaud Chastaneta 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Fernando A Quintana 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'John C Wootton 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Thomas M Normana 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Connie Cepko 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'C Steven Carmack 1', target : 'Jun S Liu 121', weight : 1},
+										{source : 'Merlise Clyde 1', target : 'Jun S Liu 121', weight : 1},
+
+
+
+
+						            ]
+						        }
+						    ]
+						};
+						// 为echarts对象加载数据
+				    		relatChart.setOption(option);
+				  }
+				);
+
+</script>
+	</div>
+
+
+
+<div class="clearfix"></div>
+	<div class ="panel-heading eye-protector-processed" style="background-color: #00C78A;border-top-left-radius: 10px;
+  border-top-right-radius: 10px;">
+				<h4 class="tag_head">Paper Number</h4>
+			</div>
+
+		<!-- 为显示作者学术历程论文数量 echart-->
+		<div id="Pnum" style="height:600px;border:2px solid #ccc;padding:1px;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; ">
+    		<!-- ECharts单文件引入 -->
+   				 <script type="text/javascript">
+        		// 路径配置
+        		require.config({
+            		paths: {
+            			 'echarts': '../static/js/dist'
+            		}
+        		});
+        		// 使用
+				require(
+				  [
+				    'echarts',
+				    'echarts/chart/bar',//加载柱状图
+				    'echarts/chart/pie',//加载饼形图
+				    'echarts/chart/line',//加载线型图
+				  ],
+				 function (ec) {
+				    // 基于准备好的dom，初始化echarts图表
+				    var PnumChart = ec.init(document.getElementById('Pnum'));
+				 	var option = {
+				 			//提示框，显示详细数据
+						    tooltip : {
+
+						        trigger: 'axis',
+						        axisPointer:{
+						        	//坐标轴指示器, 坐标轴指示器，默认type为line，可选为：'line' | 'cross' | 'shadow' | 'none'(无)，指定type后对应style生效
+								    type: 'shadow',
+									//指定shadow的style
+								    shadowStyle: {
+								        color: 'rgba(150,150,150,0.3)',
+								        width: 'auto',
+								        type: 'default'
+								    }
+								}
+						    },
+
+						    //工具箱
+						    toolbox: {
+						        show : true,
+						        //toolbox的位置
+						        y: 'bottom',
+						        feature : {
+						        	//打开辅助开关
+						            mark : {show: true},
+						            //打开数据思路，数据可以修改
+						            dataView : {show: true, readOnly: false},
+						            //图形转换，折线图，柱状图，堆积，平铺
+						            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+						            //图像还原
+						            restore : {show: true},
+						            //保存图片
+						            saveAsImage : {show: true}
+						        }
+						    },
+						    //启用拖拽重计算特性
+						    calculable : true,
+						    //t图例，表述数据和图形的关联
+						    legend: {
+						        data:['SCI','Independent Author','Corresponding Author',
+						        'First Author','Second Author','Others','Total Number']
+						    },
+						    // 直角坐标系中的横轴，通常并默认为类目型
+						    xAxis : [
+						        {
+						        	//类目形
+						            type : 'category',
+						            //是否显示分隔线
+						            splitLine : {show : false},
+						            data : ['1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006',
+						            '2007','2008','2009','2010','2011','2012']
+						        }
+						    ],
+						    // 直角坐标系中的纵轴，通常并默认为数值型
+						    yAxis : [
+						        {
+						        	//数值型
+						            type : 'value',
+						            //位置在右边
+						            position: 'right'
+						        }
+						    ],
+						    // 数据系列，一个图表可能包含多个系列，每一个系列可能包含多个数据
+						    series : [
+						        {
+						        	// 	系列名称，如启用legend，该值将被legend.data索引相关
+						            name:'SCI',
+						            //图表类型，必要参数
+						            type:'bar',
+						            //提示框
+						            tooltip : {trigger: 'item'},
+
+						            data:[1, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
+						        },
+						        {
+						            name:'Independent Author',
+						            type:'bar',
+						            tooltip : {trigger: 'item'},
+
+						            data:[1, 0, 1, 0, 3, 1, 1, 3, 1, 2, 1, 2, 1, 1, 2, 1, 1, 1, 0, 0]
+						        },
+						        {
+						            name:'Corresponding Author',
+						            type:'bar',
+						            tooltip : {trigger: 'item'},
+
+						            data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 5, 5, 4, 3, 2, 5, 0, 1]
+						        },
+						        {
+						            name:'First Author',
+						            type:'bar',
+						            tooltip : {trigger: 'item'},
+
+						            data:[0, 1, 2, 1, 0, 2, 3, 2, 2, 0, 3, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+
+						        },
+						        {
+						            name:'Others',
+						            type:'bar',
+						            tooltip : {trigger: 'item'},
+
+						            data:[0, 0, 0, 0, 0, 0, 2, 1, 3, 3, 2, 4, 4, 3, 2, 1, 3, 4, 1, 1]
+						        },
+						        {
+						            name:'Second Author',
+						            type:'bar',
+						            tooltip : {trigger: 'item'},
+
+						            data:[1, 0, 1, 0, 3, 1, 1, 3, 1, 2, 1, 2, 1, 1, 2, 1, 1, 1, 0, 0]
+						        },
+
+						         {
+						            name:'Total Number',
+						            type:'line',
+						            tooltip : {trigger: 'item'},
+						            data:[2, 4, 3, 4, 3, 3, 7,7,8,10,11,12,10,9,8,5,7,10,1,1]
+						        },
+						        //饼图数据
+						        {
+						            name:'论文职称',
+						            type:'pie',
+						            tooltip : {
+						                trigger: 'item',
+						                formatter: '{a} <br/>{b} : {c} ({d}%)'
+						            },
+						            center: [160,130],
+						            radius : [0, 50],
+						            itemStyle :　{
+						                normal : {
+						                    labelLine : {
+						                        length : 20
+						                    }
+						                }
+						            },
+						            data:[
+						                {value:1, name:'SCI'},
+						                {value:10, name:'Independent Author'},
+						                {value:33, name:'Corresponding Author'},
+						                {value:18, name:'First Author'},
+						                {value:34, name:'Others'},
+						                {value:23, name:'Second Author'}
+
+						            ]
+						        }
+						    ]
+						};
+													// 为echarts对象加载数据
+				    		PnumChart.setOption(option);
+
+				  }
+				);
+
+</script>
+	</div>
+
+
+
+
+
+	<div class ="panel-heading eye-protector-processed" style="background-color: #00C78A;border-top-left-radius: 10px;
+  border-top-right-radius: 10px;">
+				<h4 class="tag_head">Event</h4>
+
+			</div>
+
+		<!-- 为显示作者学术历程 echart-->
+		<div id="event" style="height:650px;border:2px solid #ccc;padding:1px;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; ">
+    		<!-- ECharts单文件引入 -->
+
+   				 <script type="text/javascript">
+                // 路径配置
+        		require.config({
+            		paths: {
+            			 'echarts': '../static/js/dist'
+            		}
+        		});
+        		// 使用
+				require(
+				  [
+				    'echarts',
+				    "echarts/chart/eventRiver"// 使用字符云加载，按需加载
+				  ],
+				 function (ec) {
+				    // 基于准备好的dom，初始化echarts图表
+				    var relatChart = ec.init(document.getElementById('event'));
+				 	var option = {
+				 		timeline:{
+						            data:[
+						                '1994-01-01','1998-01-01','2002-01-01','2006-01-01','2010-01-01','2014-01-01'
+						            ],
+						            label : {
+						                formatter : function(s) {
+						                    return s.slice(0, 4);
+						                }
+						            },
+						            //调整时间轴所在位置
+						            y:'93%',
+						            checkpointStyle :{
+
+										    label: {
+										        show: true,
+										        textStyle: {
+										            color: 'auto'
+										        }
+										    }
+
+						            },
+
+						            autoPlay : true,
+						            playInterval : 1000
+						        },
+
+
+						    options : [
+
+						    //第一个时间段1981-1994
+						    {
+								    title : {
+								        text: '阶段一'
+								    },
+								    tooltip : {
+								        trigger: 'item',
+								        //设置透明度
+								        backgroundColor : 'rgba(0,0,0,0.5)',
+								        textStyle : {
+								        	 color:'#FFFFFF'
+								        },
+								        enterable: true,
+								    },
+								    legend: {
+								        data:['Topic', 'Experience','Education']
+								    },
+								    toolbox: {
+								        show : true,
+								        feature : {
+								            mark : {show: true},
+								            restore : {show: true},
+								            saveAsImage : {show: true}
+								        }
+								    },
+								    xAxis : [
+								        {
+								            type : 'time',
+								            boundaryGap: [0.05,0.1],
+                                            axisLabel : {
+								                show:true,
+								                textStyle: {
+								                    color: 'white',
+
+								                }
+								            }
+								        }
+								    ],
+								    series : [
+								    //教育
+								        {
+								            "name": "Education",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								                {
+								                    "name": "B.S. in Math., Peking University,  Beijing, China.",
+								                    "weight":4,
+								                    "evolution": [
+								                        {
+								                            "time": "1981-08-01",
+								                            "value": 10,
+								                            "detail": {
+								                               "text": "",
+								                            }
+								                        },
+
+								                        {
+								                            "time": "1985-07-01",
+								                            "value": 8,
+								                            "detail": {
+								                                "link": "http://www.pku.edu.cn/",
+								                                "text": "Peking University",
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "1985-12-01",
+								                            "value": 8,
+								                            "detail": {
+
+								                                "text": "",
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                {
+								                    "name": "Ph.D program in math,  Rutgers University",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1986-09-01",
+								                            "value": 4,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1988-06-01",
+								                            "value": 18,
+								                            "detail": {
+								                                "link": "http://www.math.rutgers.edu/",
+								                                "text": "Rutgers University",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        },
+								                         {
+								                            "time": "1988-12-01",
+								                            "value": 18,
+								                            "detail": {
+								                                // "link": "http://www.math.rutgers.edu/",
+								                                "text": "",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+								                {
+								                    "name": " Visiting Faculty, Nat'l Center. Biotech. Info., NIH.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1993-07-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1993-09-01",
+								                            "value": 18,
+								                            "detail": {
+								                                "link": "http://www.ncbi.nlm.nih.gov/",
+								                                "text": "Nat'l Center. Biotech. Info., NIH.",
+								                            }
+								                        },
+								                        {
+								                            "time": "1993-12-01",
+								                            "value": 18,
+								                            "detail": {
+								                                // "link": "http://www.ncbi.nlm.nih.gov/",
+								                                "text": "",
+								                            }
+								                        }
+								                    ]
+								                },
+								                {
+								                    "name": "Ph.D., Statistics, The University of Chicago.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1988-09-01",
+								                            "value": 10,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1991-06-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link": "http://www.stat.uchicago.edu/",
+								                                "text": "The University of Chicago",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        },
+								                        {
+								                            "time": "1991-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                // "link": "http://www.stat.uchicago.edu/",
+								                                "text": "",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+								                {
+								                    "name": "Assistant Professor, Dept. of Stat., Harvard University.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1991-07-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1991-12-01",
+								                            "value": 16,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1994-01-01",
+								                            "value": 19,
+								                            "detail": {
+								                                "link": "http://www.fas.harvard.edu/~stats/",
+								                                "text": "Dept. of Stat., Harvard University.",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+
+
+								                {
+								                    "name": "AMS-SIAM selection program winner, Beijing",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1985-01-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                         {
+								                            "time": "1985-06-01",
+								                            "value": 16,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1985-12-01",
+								                            "value": 5,
+
+								                        }
+								                    ]
+								                },
+								            ]
+								        },
+
+								        //经历
+								             {
+								            "name": "Experience",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+
+
+								                {
+								                    "name": " Visiting Faculty, Nat'l Center. Biotech. Info., NIH.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1993-07-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1993-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1993-09-01",
+								                            "value": 18,
+								                            "detail": {
+								                                "link": "http://www.ncbi.nlm.nih.gov/",
+								                                "text": "Nat'l Center. Biotech. Info., NIH.",
+								                            }
+								                        }
+								                    ]
+								                },
+
+								                {
+								                    "name": "Assistant Professor, Dept. of Stat., Harvard University.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1991-07-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1991-12-01",
+								                            "value": 26,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1994-12-01",
+								                            "value": 19,
+								                            "detail": {
+								                                "link": "http://www.fas.harvard.edu/~stats/",
+								                                "text": "Dept. of Stat., Harvard University.",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+
+
+								                {
+								                    "name": "AMS-SIAM selection program winner, Beijing",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1985-01-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1985-06-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1985-12-01",
+								                            "value": 5,
+								                            "detail": {
+
+								                                "text": "AMS-SIAM selection program winner, Beijing",
+								                            }
+
+								                        }
+								                    ]
+								                },
+								            ]
+								        },
+
+
+
+
+								        //主题
+								        {
+								        	"name": "Topic",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								                {
+								                    "name": "Sequence Alignment,Models, Statistical",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1993-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Gibbs Sampling; Carrier Proteins;Multiple Alignment "
+								                            }
+								                        },
+								                        {
+								                            "time": "1993-06-01",
+								                            "value": 64,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Protein Structure; Sequence Alignment;PLinear discnmmant function"
+								                            }
+								                        },
+								                        {
+								                            "time": "1993-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Receiver operating characteristic curve; Sensitivity; Speciftdty"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                {
+								                    "name": "Data augmentation;Importance sampling; Markov chaia; Interleaving Markov property; Missing data;",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1994-01-01",
+								                            "value": 7,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": " Forward operator; Maximal correlation^ Rao-Blackwellization "
+								                            }
+								                        },
+								                        {
+								                            "time": "1994-06-01",
+								                            "value": 60,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Empirical atid mixture estimators;Markov chaia; Metropolis algorithm;"
+								                            }
+								                        },
+								                        {
+								                            "time": "1994-12-01",
+								                            "value":5,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Missing data; Maximal correUtion; Predictive distribution"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								            ]
+
+								        }
+
+								    ]
+								},
+
+
+								//第二个时间段开始1994-1998
+								{
+								    title : {
+								        text: '阶段二'
+								    },
+								    tooltip : {
+								        trigger: 'item',
+								        //设置透明度
+								        backgroundColor : 'rgba(0,0,0,0.5)',
+								        textStyle : {
+								        	 color:'#FFFFFF'
+								        },
+								        enterable: true,
+								    },
+								    legend: {
+								        data:['Topic', 'Experience','Education']
+								    },
+								    toolbox: {
+								        show : true,
+								        feature : {
+								            mark : {show: true},
+								            restore : {show: true},
+								            saveAsImage : {show: true}
+								        }
+								    },
+								    xAxis : [
+								        {
+								            type : 'time',
+								            boundaryGap: [0.05,0.1]
+								        }
+								    ],
+								    series : [
+								    //经历事件
+								        {
+								            "name": "Experience",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+
+								                {
+								                    "name": "Visiting Faculty, Dept. of Math, NUS.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1998-03-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1998-06-01",
+								                            "value": 36,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1998-12-01",
+								                            "value": 5,
+								                            "detail": {
+								                                "link": "http://www.math.nus.edu.sg/",
+								                                "text": "ept. of Math, NUS.",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+								                {
+								                    "name": "Visiting Faculty, Department of Statistics, UCLA.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1998-01-01",
+								                            "value": 3,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                         {
+								                            "time": "1998-06-01",
+								                            "value": 16,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1998-12-01",
+								                            "value": 5,
+								                            "detail": {
+								                                "link": "http://statistics.ucla.edu/",
+								                                "text": "Department of Statistics, UCLA",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                }
+
+								            ]
+								        },
+								        //主题
+								        {
+								        	"name": "Topic",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								                {
+								                    "name": "rank test,Predictive distribution, outer membrane proteins",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1995-01-01",
+								                            "value":9,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "multiple alignment algorithms; pattern recognition; Bayesian inference; statistical significance;protein  motifs;"
+								                            }
+								                        },
+								                        {
+								                            "time": "1995-06-01",
+								                            "value": 50,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Bayesian model; Communication; Gibbs sampling； Importance sampling;Predictive distribution;Signal transmission."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+
+								                         {
+								                            "time": "1995-12-01",
+								                            "value": 5,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Diaucleotide binding; Dirichlet distribution; Fragmentation; Gibbs sampling; Metropolis algorithm; Product Multinomial;"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                {
+								                    "name": "Importance ratio;Metropolis—Hastings algorithm;Hidden Markov models",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1996-01-01",
+								                            "value": 2,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Coupling, Delta method, Eigen analysis, Importance ratio. "
+								                            }
+								                        },
+								                        {
+								                            "time": "1996-06-01",
+								                            "value": 47,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Ising model; Markov chain Monte Carlo."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "1996-12-01",
+								                            "value": 7,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Alignment, Gibbs sampler, Markov chain, Protein sequences."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                 {
+								                    "name": "Molecular Sequence Data;cross-match estimate;multiple imputations ",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1997-01-01",
+								                            "value": 2,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "posterior distribution; scoring matrix ;GTP-Binding Proteins  "
+								                            }
+								                        },
+								                        {
+								                            "time": "1997-06-01",
+								                            "value": 25,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Sequence Alignment;k-sample U-statistics;"
+								                            }
+								                        },
+								                        {
+								                            "time": "1997-12-01",
+								                            "value": 12,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Sequence Homology;Bayesian inference; importance scheme"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+
+								                    ]
+								                },
+								            ]
+
+								        }
+
+								    ]
+								},
+
+								//第二个时间段结束
+
+
+								//第三个时间段开始 1998-2002
+								{
+								    title : {
+								        text: '阶段三'
+								    },
+								    tooltip : {
+								        trigger: 'item',
+								        //设置透明度
+								        backgroundColor : 'rgba(0,0,0,0.5)',
+								        textStyle : {
+								        	 color:'#FFFFFF'
+								        },
+								        enterable: true,
+								    },
+								    legend: {
+								        data:['Topic', 'Experience','Education']
+								    },
+								    toolbox: {
+								        show : true,
+								        feature : {
+								            mark : {show: true},
+								            restore : {show: true},
+								            saveAsImage : {show: true}
+								        }
+								    },
+								    xAxis : [
+								        {
+								            type : 'time',
+								            boundaryGap: [0.05,0.1]
+								        }
+								    ],
+								    series : [
+
+
+								    //经历事件
+								        {
+								            "name": "Experience",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+
+								                {
+								                    "name": "Associate Editor, Statistica Sinica",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1999-03-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "1999-12-01",
+								                            "value": 36,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2012-01-01",
+								                            "value": 5,
+								                            "detail": {
+								                                "link": "http://www.math.nus.edu.sg/",
+								                                "text": "Associate Editor, Statistica Sinica",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+								                {
+								                    "name": "Associate Editor, Biometrics",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1999-12-01",
+								                            "value": 3,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2000-12-01",
+								                            "value": 16,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2002-08-01",
+								                            "value": 5,
+								                            "detail": {
+								                                "link": "http://statistics.ucla.edu/",
+								                                "text": "Associate Editor, Biometrics",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+
+								            ]
+								        },
+								        //主题
+								        {
+								        	"name": "Topic",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								                {
+								                    "name": "Blind deconvolution, Sequential imputation; Markov chain Monte Carlo",
+								                    "weight": 42,
+								                    "evolution": [
+								                        {
+								                            "time": "1998-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Gibbs sampler;Notipara-raetric Bayes;Weighted Markov chain Monte Carlo."
+								                            }
+								                        },
+								                        {
+								                            "time": "1998-06-01",
+								                            "value": 20,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Econometric disequilibrium model;Sequential imputation."
+								                            }
+								                        },
+								                        {
+								                            "time": "1998-12-01",
+								                            "value": 3,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Bootstrap Alter;Kalman filter;Particle ftltei;State-space model;Target tracking."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                {
+								                    "name": "Importance ratio;Metropolis—Hastings algorithm;Hidden Markov models",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "1999-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Coupling, Delta method, Eigen analysis, Importance ratio. "
+								                            }
+								                        },
+								                        {
+								                            "time": "1999-06-01",
+								                            "value": 64,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Ising model; Markov chain Monte Carlo."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "1999-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Alignment, Gibbs sampler, Markov chain, Protein sequences."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+
+								                  {
+								                    "name": "Adaptive decoding;Auxiliary variable;Conjugate gradient",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2000-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "adaptive detection, coded system, flat-fading channel,  non-Gaussian noise"
+								                            }
+								                        },
+								                        {
+								                            "time": "2000-06-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "llaar measure;Parameter expansion;Slatc-spacc modtil; Stochastic ditTcrcntial equation;Unigrid method"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2000-12-01",
+								                            "value": 9,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Damped sinusoidal;  Hit-and-run algorithm; Orientational bias Monte Carlo. "
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+								                 {
+								                    "name": "Simulated tempering;Neural network;Uncoupled oscillator",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2001-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Ising model;Neural network; Renewal theory; Simulated annealing; Simulated tempering."
+								                            }
+								                        },
+								                        {
+								                            "time": "2001-06-01",
+								                            "value": 64,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "HYBRID MONTE CARLO;MULTIPLEPOINT;INDIRECT OBSERVATION; STOCHASTIC VOLATILITY; NONLINEAR RANDOM-EFFECTS MODEL;  "
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2001-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Boltzmann distribution;Hamiltonian; Heat-bath algorithm; Leap-frog; Mixture Gaussian; Uncoupled oscillator."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+
+
+								            ]
+
+								        }
+
+								    ]
+								},
+
+
+								//第三个时间段结束
+
+
+
+
+								//第四个时间段开始 2002-2006
+								{
+								    title : {
+								        text: '阶段四'
+								    },
+								    tooltip : {
+								        trigger: 'item',
+								        //设置透明度
+								        backgroundColor : 'rgba(0,0,0,0.5)',
+								        textStyle : {
+								        	 color:'#FFFFFF'
+								        },
+								        enterable: true,
+								    },
+								    legend: {
+								        data:['Topic', 'Experience','Education']
+								    },
+								    toolbox: {
+								        show : true,
+								        feature : {
+								            mark : {show: true},
+								            restore : {show: true},
+								            saveAsImage : {show: true}
+								        }
+								    },
+								    xAxis : [
+								        {
+								            type : 'time',
+								            boundaryGap: [0.05,0.1]
+								        }
+								    ],
+								    series : [
+
+								    //教育
+								        {
+								            "name": "Education",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+
+								                {
+								                    "name": "Professor (on leave), Dept of Stat, Stanford University",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2003-03-01",
+								                            "value": 36,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2003-12-01",
+								                            "value": 36,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2003-09-01",
+								                            "value": 45,
+								                            "detail": {
+								                                "link": "http://statistics.ucla.edu/",
+								                                "text": "Professor (on leave), Dept of Stat, Stanford University",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+								                {
+								                    "name": "Associate Professor (on leave), Dept of Stat, Stanford University.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2000-09-01",
+								                            "value": 6,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2003-07-01",
+								                            "value": 25,
+								                            "detail": {
+								                                "link": "http://www.math.nus.edu.sg/",
+								                                "text": "Associate Professor (on leave), Dept of Stat, Stanford University.",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+
+
+
+
+
+								            ]
+								        },
+								    //经历事件
+								        {
+								            "name": "Experience",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								            	{
+								                    "name": "Guest Professor, Peking University",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2000-11-01",
+								                            "value": 36,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2002-11-01",
+								                            "value": 45,
+								                            "detail": {
+								                                "link": "http://statistics.ucla.edu/",
+								                                "text": "Guest Professor, Peking University",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+
+
+								            ]
+								        },
+								        //主题
+								        {
+								        	"name": "Topic",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								                {
+								                    "name": "Bayesian receiver, duality, Electron microscopy",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2002-01-01",
+								                            "value": 2,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Correspondence analysis; Principal components analysis"
+								                            }
+								                        },
+								                        {
+								                            "time": "2002-06-01",
+								                            "value": 20,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Single particle image processing;Classification."
+								                            }
+								                        },
+								                        {
+								                            "time": "2002-12-01",
+								                            "value": 3,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "eigenvalue, forward–backward algorithm,transition function. "
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                {
+								                    "name": "Data augmentation; Gene regulation; Missing data;",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2003-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "GAUSSIAN MIXTURES,MICROARRAY, SIMULATED TEMPERING.  "
+								                            }
+								                        },
+								                        {
+								                            "time": "2003-06-01",
+								                            "value": 64,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Gene regulation, motif discovery, scoring functions, optimization"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2003-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " Li-norm; Linear regression for censored data; Resampling method."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+
+								                  {
+								                    "name": "Adaptive decoding;Auxiliary variable;Conjugate gradient",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2004-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "adaptive detection, coded system, flat-fading channel,  non-Gaussian noise"
+								                            }
+								                        },
+								                        {
+								                            "time": "2004-06-01",
+								                            "value": 64,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "llaar measure;Parameter expansion;Slatc-spacc modtil; Stochastic ditTcrcntial equation;Unigrid method"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2004-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Damped sinusoidal;  Hit-and-run algorithm; Orientational bias Monte Carlo. "
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+								                 {
+								                    "name": "Bootstrap;Brownian diffusion;Cox process;Conditional inference;",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2005-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Bayes factor;Energy barrier;Ornstein–Uhlenbeck process;Scale transformation update."
+								                            }
+								                        },
+								                        {
+								                            "time": "2005-06-01",
+								                            "value": 64,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Median regression; Metropolis algorithm; Normal approximation; Contingency table; Counting problem;Exacttest."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2005-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Zero–onetable;Ancestral inference;Coalescent;Population genetics;Sequential importance sampling."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+
+
+								            ]
+
+								        }
+
+								    ]
+								},
+
+
+								//第四个时间段结束
+
+
+								//第五个时间段开始2006-2010
+
+								{
+								    title : {
+								        text: '阶段五'
+								    },
+								    tooltip : {
+								        trigger: 'item',
+								        //设置透明度
+								        backgroundColor : 'rgba(0,0,0,0.5)',
+								        textStyle : {
+								        	 color:'#FFFFFF'
+								        },
+								        enterable: true,
+								    },
+								    legend: {
+								        data:['Topic', 'Experience','Education']
+								    },
+								    toolbox: {
+								        show : true,
+								        feature : {
+								            mark : {show: true},
+								            restore : {show: true},
+								            saveAsImage : {show: true}
+								        }
+								    },
+								    xAxis : [
+								        {
+								            type : 'time',
+								            boundaryGap: [0.05,0.1]
+								        }
+								    ],
+								    series : [
+
+
+								    //经历事件
+								        {
+								            "name": "Experience",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								            	{
+								                    "name": " Professor of Statistics, Dept of Stat, Harvard University.",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2001-11-01",
+								                            "value": 8,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2011-11-01",
+								                            "value": 10,
+								                            "detail": {
+								                                "link": "http://statistics.ucla.edu/",
+								                                "text": "Professor of Statistics, Dept of Stat, Harvard University.",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+
+
+								            ]
+								        },
+								        //主题
+								        {
+								        	"name": "Topic",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								                {
+								                    "name": "Haplotype Inference, histone acetylation, gene expression",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2006-01-01",
+								                            "value": 8,
+								                            "detail": {
+								                            	"link":"",
+								                            	"text": "epistatic interactions;pooling microarray "
+
+								                            }
+								                        },
+								                        {
+								                            "time": "2006-06-01",
+								                            "value": 30,
+								                            "detail": {
+								                            	"link":"",
+								                            	"text": "phototransduction network;complementary statistical medel; "
+
+								                            }
+								                        },
+								                        {
+								                            "time": "2006-12-01",
+								                            "value": 10,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Drosophila simulans;Drosophila melanogaster;evolutionary change."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                {
+								                    "name": " permutation test; Temperature ladde; near-native structures;",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2007-01-01",
+								                            "value": 6,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": " Adaptive directional sampling;Effective sample size;Mixture normal;Neural networks;Parallel tempering;Snooker algorithm."
+								                            }
+								                        },
+								                        {
+								                            "time": "2007-06-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " protein structure simulation; protein structure prediction; structural representation; potential function"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2007-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " structural zero;zero-one table;Akaike information criterion;Bayesian information criterion;gene regulation;microarray data, transcription factor binding-site motif."
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+
+								                  {
+								                    "name": "Motif clustering;Bayesian hierarchical modeling, Dirichlet process",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2008-01-01",
+								                            "value": 2,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Genomic Sequence;transcription control;genome-wide nucleosome positions; N-score;non-nucleosome DNA"
+								                            }
+								                        },
+								                         {
+								                            "time": "2008-06-01",
+								                            "value": 80,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Genomic Sequence;transcription control;genome-wide nucleosome positions; N-score;non-nucleosome DNA"
+								                            }
+								                        },
+								                        {
+								                            "time": "2008-12-01",
+								                            "value": 54,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Bayesian bicluster model; C. elegans early embryogenesis; cellular defects "
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+								                 {
+								                    "name": "Wang-Landau algorithm;Time course microarray;PPI extraction",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2009-01-01",
+								                            "value": 10,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": "Stochastic approximation;Multicanonical sampling,Trans-dimensional MCMC;Adaptive MCMC;Geometric ergodicity"
+								                            }
+								                        },
+								                        {
+								                            "time": "2009-06-01",
+								                            "value": 64,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Differentially expressed gene;Functional data analysis;Mixed-effect model;Smoothing spline;ANOVA"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2009-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Microarray;doubly stochastic latent variable analysis method;transcript discovery"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+
+
+
+								            ]
+
+								        }
+
+								    ]
+								},
+
+
+
+								// 第五个时间段结束
+
+
+								//第六阶段开始2010-2012
+								{
+								    title : {
+								        text: '阶段六'
+								    },
+								    tooltip : {
+								        trigger: 'item',
+								        //设置透明度
+								        backgroundColor : 'rgba(0,0,0,0.5)',
+								        textStyle : {
+								        	 color:'#FFFFFF'
+								        },
+								        enterable: true,
+								    },
+								    legend: {
+								        data:['Topic', 'Experience','Education']
+								    },
+								    toolbox: {
+								        show : true,
+								        feature : {
+								            mark : {show: true},
+								            restore : {show: true},
+								            saveAsImage : {show: true}
+								        }
+								    },
+								    xAxis : [
+								        {
+								            type : 'time',
+								            boundaryGap: [0.05,0.1]
+								        }
+								    ],
+								    series : [
+
+
+								    //经历事件
+								        {
+								            "name": "Experience",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								            	{
+								                    "name": " Morningside Gold Metal for Applied Mathematic",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2010-01-01",
+								                            "value": 0,
+								                            "detail": {
+
+								                                "text": "",
+								                            }
+								                        },
+								                        {
+								                            "time": "2010-12-01",
+								                            "value": 10,
+								                            "detail": {
+								                                "link": "http://www.iccm2010.org/",
+								                                "text": "ICCM 2010.",
+								                                // "img": '../asset/ico/favicon.png'
+								                            }
+								                        }
+								                    ]
+								                },
+
+
+								            ]
+								        },
+								        //主题
+								        {
+								        	"name": "Topic",
+								            "type": "eventRiver",
+								            "weight": 123,
+								            "data": [
+								                {
+								                    "name": "QTL;overlapping clustering;Rasch models",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2010-01-01",
+								                            "value": 2,
+								                            "detail": {
+								                            	"link":"",
+								                            	"text": "association mapping;EM algorithm, computational biology, literature  review. "
+
+								                            }
+								                        },
+								                        {
+								                            "time": "2010-12-01",
+								                            "value": 3,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Aphasic; Syntactic comprehension; traditional Chinese medicine; herbal functional group; dictionary model"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                },
+								                {
+								                    "name": "Evolutionary Inference;Dimension reduction; GFOLD algorithm",
+								                    "weight": 123,
+								                    "evolution": [
+								                        {
+								                            "time": "2011-01-01",
+								                            "value": 6,
+								                            "detail": {
+								                            	"link":"",
+								                               "text": " computational algorithm;CLIME;transcriptome analysis;gene expression level "
+								                            }
+								                        },
+								                        {
+								                            "time": "2011-06-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": "Projection pursuit regression;Sliced inverse regression; Stepwise regression;Variable selection"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        },
+								                        {
+								                            "time": "2011-12-01",
+								                            "value": 4,
+								                            "detail": {
+								                                "link":"",
+								                                "text": " RNA-seq analysis;gene rankings"
+								                                //"img": '../asset/ico/favicon.png'
+								                            }
+
+								                        }
+
+								                    ]
+								                }
+
+								            ]
+
+								        }
+
+								    ]
+								}
+
+								//第六阶段结束
+							]
+						};
+
+							// 为echarts对象加载数据
+				    		relatChart.setOption(option);
+				  }
+				);
+
+
+</script>
+	</div>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+{% endblock %}
